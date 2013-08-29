@@ -1,0 +1,17 @@
+>> # git push -u origin master
+  With error that :
+  error: The requested URL returned error: 403 Forbidden while accessing https://github.com/thestranger/cfinder.git/info/refs
+
+  fatal: HTTP request failed
+
+<< Solution: 
+  might try changing the URL to use SSH instead of HTTPS. In the root of your repo:
+
+# git remote set-url origin git@github.com:thestranger/cfinder.git
+
+This will require that you have a public key registered on your GitHub account.
+
+**** However, this will always require you to input your github account password every time you want to push or pull your repro with the GitHub Website.
+
+
+
